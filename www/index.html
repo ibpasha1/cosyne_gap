@@ -1,0 +1,105 @@
+<!--
+    Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <!-- Compiled and minified JavaScript -->
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <title>Cosyne - Business </title>
+  <body>
+      <style>
+        body {
+           
+           
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            opacity: 1.0;
+
+        }
+
+        a {
+        color: #fff ;
+        }
+
+        ::-webkit-input-placeholder {
+        text-align: center;
+        }
+        </style>
+      <a href="backbone.html"><h5 class="center-align" style="margin-top: 20px;"><img src="img/infinity.png" alt="" height="150" width="150"></h5></a>
+      <div class="carousel carousel-slider center" data-indicators="true">
+        <div class="carousel-fixed-item center">
+          
+          
+        </div>
+        <div class="carousel-item red white-text" href="#one!">
+          <h2>welcome to cosyne</h2>
+          <p class="white-text">where businesses and consumers work together</p>
+        </br>
+        <p class="white-text">swipe right to learn more </p>
+         </br>
+         <p class="white-text">already hip?</p>
+        </div>
+        <div class="carousel-item amber white-text" href="#two!">
+          <h2>how it works - influencers</h2>
+          <p class="white-text"></p>
+        </br>
+         <p class="white-text">business request tasks and distrib goods as rewards</p>
+        </div>
+        <div class="carousel-item green white-text" href="#three!">
+          <h2>Third Panel</h2>
+          <p class="white-text">This is your third panel</p>
+        </div>
+        <div class="carousel-item blue white-text" href="#four!">
+          <h2>Fourth Panel</h2>
+          <p class="white-text">This is your fourth panel</p>
+        </div>
+      </div>
+      
+      <button class="button button1" id="login_go"><font color="black">Login</font></button>
+      <button class="button button1" id="signup_go"><font color="black">Sign up</font></button>
+      
+
+              
+<div class="footer">
+<div class="footer-copyright">
+          <div class="container">
+       &copy;  Cosyne Inc 
+          </div>
+      </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('.carousel').carousel();
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+        document.getElementById("login_go").onclick = function () {
+        location.href = "login.html";
+        };
+
+        document.getElementById("signup_go").onclick = function () {
+        location.href = "signup.html";
+        };
+
+
+    });
+                   
+            
+           
+       </script>
+    <!--Import jQuery before materialize.js-->
+   
+  </body>
+</html>

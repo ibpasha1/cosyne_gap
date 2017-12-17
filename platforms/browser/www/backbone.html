@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Material Design Bottom Bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+    <link rel="stylesheet" href="css/bottom_tabs.css">
+    <link rel="stylesheet" href="css/backbone.css">
+   
+</head>
+<body>
+    <div class="row">
+        <div class="col s12">
+            <ul class="bottom_tabs noindicator tabs">
+                <li class="tab col s3"><a href="#test1" data-ripple-color="#212121"><i class="material-icons">settings_applications</i></a></li>
+                <li class="tab col s3"><a href="#test2" data-ripple-color="#212121"><i class="material-icons">view_list</i></a></li>
+                <li class="tab col s3"><a href="#test3" data-ripple-color="#212121"><i class="material-icons">center_focus_weak</i></a></li>
+                <li class="tab col s3"><a href="#test4" data-ripple-color="#212121"><i class="material-icons">local_grocery_store</i></a></li>
+            </ul>
+        </div>
+        <div id="test1" class="col s12">
+          <nav>
+            <div class="nav-wrapper">
+              <center><a>account</a></center>
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+              
+              </ul>
+            </div>
+          </nav>   
+          <div class="container" style="width:350px">
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input placeholder="insta username" id="" type="text" class="validate">
+                    
+                  </div>
+                  <div class="input-field col s6">
+                    <input placeholder="verification code" id="last_name" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s6">
+                    <input placeholder="first name" id="first_name" type="text" class="validate">
+                  </div>
+                  <div class="input-field col s6">
+                    <input placeholder="last name" id="last_name" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s12">
+                    <input placeholder="street address" id="stree_address" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s6">
+                    <input placeholder="city" id="city" type="text" class="validate">
+                  </div>
+                  <div class="input-field col s6">
+                    <input placeholder="state" id="state" type="text" class="validate">
+                  </div>
+                  <div class="input-field col s6">
+                    <input placeholder="zip" id="zip" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s12">
+                    <select>
+                      <option value="" disabled selected>gender</option>
+                      <option value="1">male</option>
+                      <option value="2">female</option>
+                    </select>
+                  </div>
+            
+                </div>
+                <center><button class="button button1" type="submit" name="save">save</button></center>
+           </div>
+      </div>
+    </div>
+
+
+
+       <div id="test2" class="col s12">
+        <nav>
+          <div class="nav-wrapper">
+            <center><a>global queue | market cap: 542 | total coin: 31243</a></center>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            </ul>
+          </div>
+        </nav>   
+
+        
+       
+        <div class="row">
+          <div class="input-field col s12">
+             <input placeholder="search queue" id="search" type="text" class="validate">
+          </div>
+
+
+            <ul class="collection">
+              <li class="collection-item avatar">
+                <img src="Img/coffee.png" alt="" class="circle">
+                <span class="title">16oz Coffee</span>
+                <p>Kalaids LLC <br>
+                  12/5/2017
+                </p>
+                <a href="index.html" class="secondary-content"><i class="material-icons">add_circle
+                </i></a>
+              </li>
+              <li class="collection-item avatar">
+                <img src="product_images/pizza.png" alt="" class="circle">
+                <span class="title">Cheese Slize</span>
+                <p>Gordons Pizza <br>
+                  12/12/2017
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">add_circle
+                </i></a>
+              </li>
+              <li class="collection-item avatar">
+                <img src="product_images/hamburguer.png" alt="" class="circle">
+                <span class="title">Large Hamburger</span>
+                <p>Five Guys <br>
+                  12/12/2017
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">add_circle
+                </i></a>
+              </li>
+              <li class="collection-item avatar">
+                <img src="product_images/fries.png" alt="" class="circle">
+                <span class="title">Title</span>
+                <p>First Line <br>
+                  Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">add_circle
+                </i></a>
+              </li>
+              <li class="collection-item avatar">
+                <img src="product_images/doughnut.png" alt="" class="circle">
+                <span class="title">Title</span>
+                <p>First Line <br>
+                  Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">add_circle
+                </i></a>
+              </li>
+          
+              <li class="collection-item avatar">
+                <img src="product_images/ice-cream.png" alt="" class="circle">
+                <span class="title">Title</span>
+                <p>First Line <br>
+                  Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">add_circle
+                </i></a>
+              </li>
+        </ul>
+    </div>
+</div>
+    
+
+          <div id="test3" class="col s12">
+              <nav>
+                  <div class="nav-wrapper">
+                    <center><a>my inventory | items: 2 | total coin: 4000</a></center>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    </ul>
+                  </div>
+                </nav>   
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <div class="collapsible-header">
+                        <i class="material-icons">fullscreen</i>
+                        16 oz Coffee
+                        <span class="badge">locked</span></div>
+                      <div class="collapsible-body">
+                          <center>
+                          </br>
+                              <center><img src="product_images/coffee.png" height="50" width="50"></center>
+                          <p>Reward locked</p></center>
+                          <center><img src="product_images/qr.png" height="200" width="200"></center>
+                        </br>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header">
+                        <i class="material-icons">fullscreen</i>
+                        Cheese Slize
+                        <span class="badge">locked</span></div>
+                      <div class="collapsible-body">
+                          <center><img src="Img/qr.png" height="200" width="200"></center>
+                      </div>
+                    </li>
+                  </ul> 
+             </div>
+
+
+        <div id="test4" class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                  <center><a>current: 100 | trading post | total coin: 31243</a></center>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  </ul>
+                </div>
+              </nav>  
+          </div>
+    </div>
+ 
+            
+        
+    <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+    <script src="js/bottom_tabs.js"></script>
+    <script>
+            
+                       $(document).ready(function() {
+                       $('select').material_select();
+                       $(".button-collapse").sideNav();
+                       $('.timepicker').pickatime({
+                         default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+                         fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+                         twelvehour: false, // Use AM/PM or 24-hour format
+                         donetext: 'OK', // text for done-button
+                         cleartext: 'Clear', // text for clear-button
+                         canceltext: 'Cancel', // Text for cancel-button
+                         autoclose: false, // automatic close timepicker
+                         ampmclickable: true, // make AM PM clickable
+                         aftershow: function(){} //Function for after opening timepicker
+                              });
+                
+                            });
+
+                            $(window).on("load resize ", function() {
+                            var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+                            $('.tbl-header').css({'padding-right':scrollWidth});
+                            }).resize();
+                   
+               </script>
+</body>
+
+</html>

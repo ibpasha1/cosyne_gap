@@ -1,0 +1,38 @@
+.button {
+    background-color: #ff6666; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+   }
+
+   body    {
+   background-color: #fff;
+   }
+
+
+   .button1 {
+   background-color: #ff6666; 
+   color: black; 
+   border: 2px solid #ff6666;
+   }
+
+   .button2 {
+   background-color: #34495e; 
+   color: black; 
+   border: 2px solid #34495e;
+   }
+
+   .nav-wrapper {
+     background-color: #3B3C3D !important;
+   }
+
+   .collection-item {
+   background-color: #fff !important;
+   }
