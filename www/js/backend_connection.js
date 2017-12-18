@@ -1,7 +1,7 @@
-//Author - Ibrahim Pasha
+//Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha 
 $(document).ready(function() {
 
-    var url="http://localhost/cosyne_backend/influencer_register.php?callback=?";
+    var url="http://localhost/cosyne_backend/app.php?callback=?";
     
     $("#signup").click(function(){
     var email=$("#email").val();
@@ -18,10 +18,6 @@ $(document).ready(function() {
           beforeSend: function(){ $("#signup").val('Connecting...');},
           success: function(data){
           $('#content').html(data);
-
-
-
-
           }
       });
     }
@@ -44,17 +40,7 @@ $("#login").click(function(){
           cache: false,
           beforeSend: function(){ $("#login").val('Connecting...');},
           success: function(data){
-            if(data=="success") 
-            {
-                 localStorage.login="true";
-				 localStorage.email=email;
-				 window.location.href = "backbone.html";
-            }
-			else if(data="mismatch")
-			{
-                alert("wrong password and email address");
-                $("#login").html('Login');
-			}
+          $('#content').html(data);
           }
       });
     }
