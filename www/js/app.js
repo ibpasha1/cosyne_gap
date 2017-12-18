@@ -1,13 +1,17 @@
-//Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha 
+/*
+Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha
+app general javascript functions 
+signup - login - update account 
+*/
 $(document).ready(function() {
 
     var url="http://localhost/cosyne_backend/app.php?callback=?";
-    
+
     $("#signup").click(function(){
     var email=$("#email").val();
     var password=$("#password").val();
     var dataString="email="+email+"&password="+password+"&signup=";
-    if($.trim(email).length>0 & $.trim(password).length>0) 
+    if($.trim(email).length>0 & $.trim(password).length>0)
     {
         $.ajax({
           type: "POST",
@@ -17,7 +21,8 @@ $(document).ready(function() {
           cache: false,
           beforeSend: function(){ $("#signup").val('Connecting...');},
           success: function(data){
-          $('#content').html(data);
+             $('#key').html(data);
+             $('#status').html(data);
           }
       });
     }
@@ -30,7 +35,7 @@ $("#login").click(function(){
     var email=$("#email").val();
     var password=$("#password").val();
     var dataString="email="+email+"&password="+password+"&login=";
-    if($.trim(email).length>0 & $.trim(password).length>0) 
+    if($.trim(email).length>0 & $.trim(password).length>0)
     {
         $.ajax({
           type: "POST",
@@ -40,7 +45,8 @@ $("#login").click(function(){
           cache: false,
           beforeSend: function(){ $("#login").val('Connecting...');},
           success: function(data){
-          $('#content').html(data);
+            //$('#key').html(data);
+            $('#status').html(data);
           }
       });
     }
@@ -52,7 +58,7 @@ $("#update_account").click(function(){
     var email=$("#email").val();
     var password=$("#password").val();
     var dataString="email="+email+"&password="+password+"&update_account=";
-    if($.trim(email).length>0 & $.trim(password).length>0) 
+    if($.trim(email).length>0 & $.trim(password).length>0)
     {
         $.ajax({
           type: "POST",
@@ -62,7 +68,7 @@ $("#update_account").click(function(){
           cache: false,
           beforeSend: function(){ $("#signup").val('Connecting...');},
           success: function(data){
-            if(data=="success") 
+            if(data=="success")
             {
                 alert("Thank you for Registering with us! you can login now");
                 $("#update_account").val('submit');
@@ -77,32 +83,12 @@ $("#update_account").click(function(){
 			else if(data="failed")
 			{
 			alert("Something Went wrong");
-			}  
+			}
           }
       });
     }
    return false;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });

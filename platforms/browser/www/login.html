@@ -15,22 +15,16 @@
   <body>
       <style>
         body {
-           
-           
             background-repeat: no-repeat;
             background-size: 100% 100%;
             opacity: 1.0;
-
         }
-
         a {
         color: #fff ;
         }
-
         ::-webkit-input-placeholder {
         text-align: center;
         }
-
         </style>
             <script type="text/javascript">
                 var url = window.location.pathname;var filename = url.substring(url.lastIndexOf('/')+1);
@@ -41,11 +35,11 @@
                <div class="col m6">
          <a href="backbone.html"><h5 class="center-align" style="margin-top: 80px;"><img src="img/infinity.png" alt="" height="150" width="150"></h5></a>
       <p class="center-align"><font color="black">cosyne - login</font></p>
-         
-     
+
+
                   <div class="row">
                       <div class="input-field col s12">
-                          <input id="email" type="email" class="validate" name="email" placeholder="email" required> 
+                          <input id="email" type="email" class="validate" name="email" placeholder="email" required>
                       </div>
                   </div>
                   <div class="row">
@@ -57,17 +51,24 @@
                       <div class="col m12">
                           <p class="center-align">
                           <button class="button_login button1" id="login"><font color="black">login</font></button>
-                          <center><div id="content"></div></center>
+                          <center><div id="status"></div></center>
                           </p>
                       </div>
                   </div>
-                 
-            
-              
+                    <script type="text/javascript">
+                    function next() {
+                      var status = document.getElementById("status").value;
+                      if (status == 'success') {
+                        window.location.href = "backbone.html";
+                      }
+                    }
+                      </script>
+
+
 <div class="footer">
 <div class="footer-copyright">
           <div class="container">
-       &copy;  Cosyne Inc 
+       &copy;  Cosyne Inc
           </div>
       </div>
 </div>

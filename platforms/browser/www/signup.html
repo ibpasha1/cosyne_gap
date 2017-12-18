@@ -31,10 +31,24 @@
 
 <script type="text/javascript">
      var url = window.location.pathname;
-            var filename = url.substring(url.lastIndexOf('/') + 1);
-            if (localStorage.login == "true" && filename == 'signup.html') {
-                window.location.href = "backbone.html";
-            }
+     var filename = url.substring(url.lastIndexOf('/') + 1);
+     if (localStorage.login == "true" && filename == 'signup.html') 
+     {
+      window.location.href = "backbone.html";
+     }
+      window.onload = function() {
+      document.addEventListener("deviceready", init, false);
+      }
+
+      function store_key() {
+        var user_key = document.getElementById("content").value;
+        window.localStorage.setItem("key", user_key);
+      }
+
+      function show_key() {
+        var output = window.localStorage.getItem("key"); 
+        document.getElementById("result").innerHTML = output;
+      }
 </script>
  <div class="container" style="width:250px">
       <a href="backbone.html"><h5 class="center-align" style="margin-top: 80px;"><img src="img/infinity.png" alt="" height="150" width="150"></h5></a>
@@ -60,7 +74,13 @@
             </div>
                
                  <center><a href="login.html"><font color="black">already hip?</font></a></center>
-                 <center><div id="content"></div></center>
+                 <center><div id="status"></div></center>
+                </br>
+                 <center><div id="key"></div></center>
+                </br>
+                <div id="result"></div>
+
+                 
 <div class="footer">
 <div class="footer-copyright">
           <div class="container">
