@@ -1,4 +1,8 @@
-//Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha
+/*
+Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha
+app general javascript functions
+signup - login - update account
+*/
 $(document).ready(function() {
 
     var url="http://localhost/cosyne_backend/app.php?callback=?";
@@ -40,11 +44,17 @@ $("#login").click(function(){
           crossDomain: true,
           cache: false,
           beforeSend: function(){ $("#login").val('Connecting...');},
-          success: function(data){
-            //$('#key').html(data);
-            $('#status').html(data);
+          success: function(data)
+          {
+              if ($.trim(data) == "success") {
+                  window.location.href = "backbone.html";
+                  //localStorage.login="true";
+              } else {
+                  $('#status').html(data);
+                  //localStorage.login="false";
+              }
           }
-      });
+       });
     }
    return false;
 });

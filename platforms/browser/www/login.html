@@ -27,9 +27,7 @@
         }
         </style>
             <script type="text/javascript">
-                var url = window.location.pathname;var filename = url.substring(url.lastIndexOf('/')+1);
-                if(localStorage.login=="true" && filename == 'login.html'){window.location.href = "index.html";}
-                else if(localStorage.login=="false" && filename != 'login.html'){window.location.href = "login.html";}
+          
               </script>
             <div class="container" style="width:250px">
                <div class="col m6">
@@ -59,7 +57,7 @@
                     function next() {
                       var status = document.getElementById("status").value;
                       if (status == 'success') {
-                        window.location.href = "backbone.html";
+                        window.location.href = "";
                       }
                     }
                       </script>
