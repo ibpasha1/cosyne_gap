@@ -45,14 +45,16 @@ $("#login").click(function(){
           cache: false,
           beforeSend: function(){ $("#login").val('Connecting...');},
           success: function(data)
-          {
-              if ($.trim(data) == "success") {
-                  window.location.href = "backbone.html";
+            {
+                if ($.trim(data) == "success") {
+                  $('#status').html(data);
                   //localStorage.login="true";
+                  window.location.href = "backbone.html";
               } else {
                   $('#status').html(data);
                   //localStorage.login="false";
-              }
+                  window.location.href = "index.html";
+             }
           }
        });
     }
@@ -95,6 +97,11 @@ $("#update_account").click(function(){
     }
    return false;
 });
+
+    $("#logout").click(function(){
+     localStorage.login="false";
+     window.location.href = "login.html";
+   });
 
 
 });

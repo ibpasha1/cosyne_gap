@@ -2,14 +2,24 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Material Design Bottom Bar</title>
+    <title>Cosyne</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+
     <link rel="stylesheet" href="css/bottom_tabs.css">
     <link rel="stylesheet" href="css/backbone.css">
-   
+
 </head>
+  <script text="text/javascript">
+     var session_status = document.getElementById("#status");
+     localStorage.setItem("token", "session_status");
+     var session = sessionStorage.getItem('token');
+     console.log('session');
+     if ($.trim(session) != "success") {
+        window.location.href = "login.html";
+     }
+   </script>
 <body>
     <div class="row">
         <div class="col s12">
@@ -22,20 +32,27 @@
         </div>
         <div id="test1" class="col s12">
           <nav>
-            <div class="nav-wrapper">
-              <center><a>account</a></center>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-              
-              </ul>
-            </div>
-          </nav>   
+              <div class="nav-wrapper">
+                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                     <li><a href="sass.html">Sass</a></li>
+                     <li><a href="badges.html">Components</a></li>
+                     <li><a href="collapsible.html">Javascript</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                  </ul>
+                 <ul class="side-nav" id="mobile-demo">
+               <li> <a href="#" class="button button-clear" id="logout">Logout</a></li>
+             </ul>
+          </div>
+       </nav>
+
           <div class="container" style="width:350px">
             <div class="row">
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
                     <input placeholder="insta username" id="" type="text" class="validate">
-                    
+
                   </div>
                   <div class="input-field col s6">
                     <input placeholder="verification code" id="last_name" type="text" class="validate">
@@ -69,7 +86,7 @@
                       <option value="2">female</option>
                     </select>
                   </div>
-            
+
                 </div>
                 <center><button class="button button1" type="submit" name="save">save</button></center>
            </div>
@@ -85,10 +102,10 @@
             <ul id="nav-mobile" class="left hide-on-med-and-down">
             </ul>
           </div>
-        </nav>   
+        </nav>
 
-        
-       
+
+
         <div class="row">
           <div class="input-field col s12">
              <input placeholder="search queue" id="search" type="text" class="validate">
@@ -141,7 +158,7 @@
                 <a href="#!" class="secondary-content"><i class="material-icons">add_circle
                 </i></a>
               </li>
-          
+
               <li class="collection-item avatar">
                 <img src="product_images/ice-cream.png" alt="" class="circle">
                 <span class="title">Title</span>
@@ -154,7 +171,7 @@
         </ul>
     </div>
 </div>
-    
+
 
           <div id="test3" class="col s12">
               <nav>
@@ -163,7 +180,7 @@
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
                     </ul>
                   </div>
-                </nav>   
+                </nav>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
                       <div class="collapsible-header">
@@ -188,7 +205,7 @@
                           <center><img src="Img/qr.png" height="200" width="200"></center>
                       </div>
                     </li>
-                  </ul> 
+                  </ul>
              </div>
 
 
@@ -199,17 +216,18 @@
                   <ul id="nav-mobile" class="left hide-on-med-and-down">
                   </ul>
                 </div>
-              </nav>  
+              </nav>
           </div>
     </div>
- 
-            
-        
-    <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
     <script src="js/bottom_tabs.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     <script>
-            
+
                        $(document).ready(function() {
                        $('select').material_select();
                        $(".button-collapse").sideNav();
@@ -224,15 +242,14 @@
                          ampmclickable: true, // make AM PM clickable
                          aftershow: function(){} //Function for after opening timepicker
                               });
-                
+
                             });
 
                             $(window).on("load resize ", function() {
                             var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
                             $('.tbl-header').css({'padding-right':scrollWidth});
                             }).resize();
-                   
-               </script>
-</body>
 
+                </script>
+        </body>
 </html>
