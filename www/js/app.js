@@ -30,6 +30,9 @@ $(document).ready(function() {
    return false;
 });
 
+window.onload = function() {
+document.addEventListener("deviceready", init, false);
+}
 
 
 $("#login").click(function(){
@@ -46,21 +49,24 @@ $("#login").click(function(){
           cache: false,
           beforeSend: function(){ $("#login").val('Connecting...');},
           success: function(data)
-            {
+          {
               var obj = JSON.parse(data);
-                var current_status = obj.status;
-                var user_email     = obj.email;
-                if (current_status == email) {
-                    $('#status').html(current_status);
-                     console.log(user_email);
-                     window.location.href = "backbone.html";
-                  } else {
-                     window.location.href = "login.html";
-                  }
-            }
-
-       });
-    }
+              var current_status = obj.status;
+              var id     = obj.id;
+                  if ($.trim(current_status) == "success") {
+                      $('#status').html(current_status);
+                      $('#key').html(id);
+                      console.log(id);
+                      window.localStorage.setItem("status",current_status);
+                      window.localStorage.setItem("key",id);
+                      window.location.href = "backbone.html";
+                } else {
+                      window.location.href = "login.html";
+                      $('#status').html('wrong password or email');
+              }
+          }
+      });
+  }
    return false;
 });
 
@@ -96,8 +102,7 @@ $("#update_account").click(function(){
             cache: false,
             beforeSend: function(){ $("#update_account").val('Connecting...');},
             success: function(data){
-               $('#key').html(data);
-               //$('#status').html(data);
+               $('#status').html(data);
             }
         });
       }
@@ -142,6 +147,23 @@ $("#update_accountdep").click(function(){
 });
 
 
+
+$(document).ready(function() {
+
+    $("#display").click(function() {
+
+      $.ajax({    //create an ajax request to display.php
+        type: "GET",
+        url: url,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#insta_username").html(response);
+            //alert(response);
+        }
+
+    });
+});
+});
 
 //account_request
 $( "#account_request" ).keyup(function() {
@@ -190,9 +212,11 @@ $( "#account_request" ).keyup(function() {
 
 
 
-
     $("#logout").click(function(){
      localStorage.login="false";
+     localStorage.clear();
+     //window.localstorage.setItem("status",current_status);
+     //window.localstorage.setItem("key",id);
      window.location.href = "login.html";
    });
 

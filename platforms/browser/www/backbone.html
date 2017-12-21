@@ -11,11 +11,19 @@
 
 </head>
   <script text="text/javascript">
-     var session_status = document.getElementById("#status");
-     localStorage.setItem("token", "session_status");
-     var session = sessionStorage.getItem('token');
-     console.log('session');
-     if ($.trim(session) != "success") {
+
+     var secret_key   = window.localStorage.getItem('key');
+     var login_status = window.localStorage.getItem('status');
+     console.log(secret_key);
+     console.log(login_status);
+
+     if (login_status == "success") {
+        //window.location.href = "back.html";
+     } else {
+        window.location.href = "login.html";
+     }
+
+     if ($.trim(login_status) != null ) {
         window.location.href = "login.html";
      }
    </script>
@@ -50,7 +58,7 @@
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
-                    <input placeholder="email" id="email" type="text" class="validate">
+
                     <input placeholder="insta username" id="insta_username" type="text" class="validate">
 
                   </div>
@@ -89,7 +97,6 @@
 
                 </div>
                 <center><button class="button button1" id="update_account">save</button></center>
-                 <center><div id="key"></div></center>
            </div>
       </div>
     </div>
