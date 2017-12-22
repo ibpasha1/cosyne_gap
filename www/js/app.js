@@ -1,7 +1,7 @@
 /*
 Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha
 app general javascript functions
-signup - login - update account
+signup - login - sessions in local storage -  update account
 */
 $(document).ready(function() {
 
@@ -75,34 +75,21 @@ $("#login").click(function(){
 
 
 $("#update_account").click(function(){
-    var email=$("#email").val();
-    var insta_username=$("#insta_username").val();
-    var verification_code=$("#verification_code").val();
+    var id=$("#id").val();
     var first_name=$("#first_name").val();
-    var last_name=$("#last_name").val();
-    var street_address=$("#street_address").val();
-    var city=$("#city").val();
-    var state=$("#state").val();
-    var zip=$("#zip").val();
-    var gender=$("#gender").val();
-    var dataString = "email=" + email +"&insta_username=" + insta_username + "&verification_code=" + verification_code + "&first_name=" + first_name
-    + "&last_name=" + last_name + "&street_address=" + street_address + "&city="
-    + city + "&state=" + state + "&zip=" + zip
-    + "&gender=" + gender+"&update_account=";
-    if($.trim(email).length>0 & $.trim(insta_username).length>0 & $.trim(verification_code).length>0
-    & $.trim(first_name).length>0 & $.trim(last_name).length>0
-    & $.trim(street_address).length>0 & $.trim(city).length>0
-    & $.trim(state).length>0 & $.trim(zip).length>0 & $.trim(gender).length>0)
-    {
-          $.ajax({
-            type: "POST",
-            url: url,
-            data: dataString,
-            crossDomain: true,
-            cache: false,
-            beforeSend: function(){ $("#update_account").val('Connecting...');},
-            success: function(data){
-               $('#status').html(data);
+    var insta_username=$("#insta_username").val();
+    var dataString = "id=" + id +"&first_name=" + first_name +"&insta_username=" + insta_username +"&update_account=";
+      if($.trim(id).length>0 & $.trim(first_name).length>0 & $.trim(insta_username).length>0)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    beforeSend: function(){ $("#update_account").val('Connecting...');},
+                    success: function(data){
+                          $('#sum').html(data);
             }
         });
       }
