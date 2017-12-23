@@ -1,7 +1,7 @@
 /*
 Copyright (c) Cosyne LLC 2017 - 2018 - Author Ibrahim Pasha
 app general javascript functions
-signup - login - sessions in local storage -  update account
+[signup] - [login] - [sessions in local storage] - [update account]
 */
 $(document).ready(function() {
 
@@ -52,13 +52,22 @@ $("#login").click(function(){
           {
               var obj = JSON.parse(data);
               var current_status = obj.status;
-              var id     = obj.id;
+              var id             = obj.id;
+              var ig_user        = obj.insta_username;
+              var ver_code       = obj.verification_code;
+
+
                   if ($.trim(current_status) == "success") {
                       $('#status').html(current_status);
                       $('#key').html(id);
+                      $('#igu').html(ig_user);
+                      $('#vcode').html(ver_code);
                       console.log(id);
+                      console.log(ig_user);
                       window.localStorage.setItem("status",current_status);
                       window.localStorage.setItem("key",id);
+                      window.localStorage.setItem("igu",ig_user);
+                      window.localStorage.setItem("vcode",ver_code);
                       window.location.href = "backbone.html";
                 } else {
                       window.location.href = "login.html";
@@ -76,9 +85,17 @@ $("#login").click(function(){
 
 $("#update_account").click(function(){
     var id=$("#id").val();
-    var first_name=$("#first_name").val();
     var insta_username=$("#insta_username").val();
-    var dataString = "id=" + id +"&first_name=" + first_name +"&insta_username=" + insta_username +"&update_account=";
+    var verification_code=$("#verification_code").val();
+    var first_name=$("#first_name").val();
+    var last_name=$("#last_name").val();
+    var street_address=$("#street_address").val();
+    var city=$("#city").val();
+    var state=$("#state").val();
+    var zip=$("#zip").val();
+    var gender=$("#gender").val();
+    var dataString = 'id=' + id +'&insta_username=' + insta_username + '&verification_code=' + verification_code + '&first_name=' + first_name
+      + '&last_name=' + last_name + '&street_address=' + street_address + '&city=' + city + '&state=' + state + '&zip=' + zip + '&gender=' + gender+"&update_account=";
       if($.trim(id).length>0 & $.trim(first_name).length>0 & $.trim(insta_username).length>0)
             {
                 $.ajax({
@@ -88,9 +105,21 @@ $("#update_account").click(function(){
                     crossDomain: true,
                     cache: false,
                     beforeSend: function(){ $("#update_account").val('Connecting...');},
-                    success: function(data){
-                          $('#sum').html(data);
-            }
+                    success: function(data)
+                    {
+                           var obj2 = JSON.parse(data);
+                           var insta    = obj2.insta_username;
+                           var ver_code = obj2.verification_code;
+                           $('#insta_var').html(insta);
+                           $('#ver').html(ver_code);
+                           window.localStorage.setItem("insta_var",insta);
+                           window.localStorage.setItem("ver",ver_code);
+
+
+
+
+
+                    }
         });
       }
   return false;
@@ -98,58 +127,15 @@ $("#update_account").click(function(){
 
 
 
-
-
-
-
-
-$("#update_accountdep").click(function(){
-      var insta_username        = document.getElementById("insta_username").value;
-      var verification_code     = document.getElementById("verification_code").value;
-      var first_name            = document.getElementById("first_name").value;
-      var last_name             = document.getElementById("last_name").value;
-      var street_address        = document.getElementById("street_address").value;
-      var city                  = document.getElementById("city").value;
-      var state                 = document.getElementById("state").value;
-      var zip                   = document.getElementById("zip").value;
-      var gender                = document.getElementById("gender").value;
-      var dataString = 'insta_username=' + insta_username + '&verification_code=' + verification_code + '&first_name=' + first_name
-      + '&last_name=' + last_name + '&street_address=' + street_address + '&city=' + city + '&state=' + state + '&zip=' + zip + '&gender=' + gender;
-      if (insta_username == '' || verification_code == '' || first_name == '' || last_name == '')
-      {
-              alert("Please Fill All Fields");
-              } else {
-              // AJAX code to submit form.
-              $.ajax({
-                      type: "POST",
-                      url: "http://localhost/cosyne_backend/cosyne_backend/app.php",
-                      data: dataString,
-                      cache: false,
-                      success: function(html) {
-                      alert(html);
-                   }
-              });
-        }
-      return false;
-});
-
-
-
 $(document).ready(function() {
-
-    $("#display").click(function() {
-
-      $.ajax({    //create an ajax request to display.php
-        type: "GET",
-        url: url,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#insta_username").html(response);
-            //alert(response);
-        }
-
-    });
-});
+    $.ajax({    //create an ajax request to load_page.php
+      type: "GET",
+      url: "file.php?selectedVal="+selectedVal,
+      dataType: "html",   //expect html to be returned
+      success: function(response){
+          $("#some_container").html(response);
+      }
+  });
 });
 
 //account_request

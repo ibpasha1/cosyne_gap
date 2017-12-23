@@ -11,9 +11,11 @@
 
 </head>
   <script text="text/javascript">
-
-     var secret_key   = window.localStorage.getItem('key');
-     var login_status = window.localStorage.getItem('status');
+     var secret_key         = window.localStorage.getItem('key');
+     var login_status       = window.localStorage.getItem('status');
+     var insta_username1    = window.localStorage.getItem('igu');
+     var verification_code1 = window.localStorage.getItem('vcode');
+     console.log(insta_username1);
      console.log(secret_key);
      console.log(login_status);
 
@@ -30,7 +32,7 @@
 
 
 
-     document.getElementById('id').innerHTML = 1505194530;
+
 
 
    </script>
@@ -61,11 +63,16 @@
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s12">
-                      <input id="id" type="text"  value="">
+                      <input id="id" name="id" type="hidden">
                   </div>
 
                   <div class="input-field col s6">
-                    <input placeholder="insta username" id="insta_username" type="text" class="validate">
+                    <input placeholder="" id="insta_username" type="text" class="validate">
+                  </div>
+
+
+                  <div class="input-field col s6">
+                    <input placeholder="verification_code" id="verification_code" type="text" class="validate">
                   </div>
 
 
@@ -73,10 +80,40 @@
                     <input placeholder="first name" id="first_name" type="text" class="validate">
                   </div>
 
+                  <div class="input-field col s6">
+                    <input placeholder="last name" id="last_name" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s12">
+                    <input placeholder="street_address" id="street_address" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s6">
+                    <input placeholder="city" id="city" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s6">
+                    <input placeholder="state" id="state" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s6">
+                    <input placeholder="zip" id="zip" type="text" class="validate">
+                  </div>
+
+                  <div class="input-field col s6">
+                  <select id="gender">
+                    <option value="" disabled selected>select gender</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                  </select>
+                </div>
+
+
+
 
                 </div>
                 <center><button class="button button1" id="update_account">save</button></center>
-                <center><div id="sum"></div></center>
+                <center><div id="insta_var"></div></center>
            </div>
       </div>
     </div>
@@ -218,6 +255,10 @@
     <script>
 
                        $(document).ready(function() {
+                       document.getElementById('id').value  = secret_key;
+                       document.getElementById("insta_username").placeholder    = insta_username1;
+                       document.getElementById("verification_code").placeholder = verification_code1;
+
                        $('select').material_select();
                        $(".button-collapse").sideNav();
                        $('.timepicker').pickatime({
