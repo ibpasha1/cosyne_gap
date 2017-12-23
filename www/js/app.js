@@ -55,6 +55,13 @@ $("#login").click(function(){
               var id             = obj.id;
               var ig_user        = obj.insta_username;
               var ver_code       = obj.verification_code;
+              var firstname      = obj.first_name;
+              var lastname       = obj.last_name;
+              var streetaddress  = obj.street_address;
+              var city           = obj.city;
+              var state          = obj.state;
+              var zip            = obj.zip;
+              var gender         = obj.gender;
 
 
                   if ($.trim(current_status) == "success") {
@@ -62,12 +69,27 @@ $("#login").click(function(){
                       $('#key').html(id);
                       $('#igu').html(ig_user);
                       $('#vcode').html(ver_code);
+                      $('#firstname').html(firstname);
+                      $('#lastname').html(lastname);
+                      $('#streetaddress').html(streetaddress);
+                      $('#city').html(city);
+                      $('#state').html(state);
+                      $('#zip').html(zip);
+                      $('#gender').html(gender);
                       console.log(id);
                       console.log(ig_user);
                       window.localStorage.setItem("status",current_status);
                       window.localStorage.setItem("key",id);
                       window.localStorage.setItem("igu",ig_user);
                       window.localStorage.setItem("vcode",ver_code);
+                      window.localStorage.setItem("firstname",firstname);
+                      window.localStorage.setItem("lastname",lastname);
+                      window.localStorage.setItem("streetaddress",streetaddress);
+                      window.localStorage.setItem("city",city);
+                      window.localStorage.setItem("state",state);
+                      window.localStorage.setItem("zip",zip);
+                      window.localStorage.setItem("gender",gender);
+
                       window.location.href = "backbone.html";
                 } else {
                       window.location.href = "login.html";
@@ -114,6 +136,10 @@ $("#update_account").click(function(){
                            $('#ver').html(ver_code);
                            window.localStorage.setItem("insta_var",insta);
                            window.localStorage.setItem("ver",ver_code);
+                              if ($.trim(data) == "error")
+                                  {
+                                    alert("push fill in all fields");
+                                  }
 
 
 
