@@ -5,8 +5,8 @@ app general javascript functions
 */
 $(document).ready(function() {
 
-        var url="http://localhost/cosyne_backend/cosyne_backend/app.php?callback=?";
-      //var url="http://www.cosyne.io/y/app.php?callback=?";
+      //var url="http://localhost/cosyne_backend/cosyne_backend/app.php?callback=?";
+      var url="http://www.cosyne.io/y/app.php?callback=?";
 
     $("#signup").click(function(){
     var email=$("#email").val();
@@ -53,6 +53,7 @@ $("#login").click(function(){
               var obj = JSON.parse(data);
               var current_status = obj.status;
               var id             = obj.id;
+              var active         = obj.active;
               var ig_user        = obj.insta_username;
               var ver_code       = obj.verification_code;
               var firstname      = obj.first_name;
@@ -62,40 +63,58 @@ $("#login").click(function(){
               var state          = obj.state;
               var zip            = obj.zip;
               var gender         = obj.gender;
+              var booler         = 'your account is not activated';
 
 
-                  if ($.trim(current_status) == "success") {
-                      $('#status').html(current_status);
-                      $('#key').html(id);
-                      $('#igu').html(ig_user);
-                      $('#vcode').html(ver_code);
-                      $('#firstname').html(firstname);
-                      $('#lastname').html(lastname);
-                      $('#streetaddress').html(streetaddress);
-                      $('#city').html(city);
-                      $('#state').html(state);
-                      $('#zip').html(zip);
-                      $('#gender').html(gender);
-                      console.log(id);
-                      console.log(ig_user);
-                      window.localStorage.setItem("status",current_status);
-                      window.localStorage.setItem("key",id);
-                      window.localStorage.setItem("igu",ig_user);
-                      window.localStorage.setItem("vcode",ver_code);
-                      window.localStorage.setItem("firstname",firstname);
-                      window.localStorage.setItem("lastname",lastname);
-                      window.localStorage.setItem("streetaddress",streetaddress);
-                      window.localStorage.setItem("city",city);
-                      window.localStorage.setItem("state",state);
-                      window.localStorage.setItem("zip",zip);
-                      window.localStorage.setItem("gender",gender);
+                  if ($.trim(current_status) == "success" && $.trim(active) == "1") {
+                        if ($.trim(active) == "0")
+                            {
+                                $('#status').html(booler);
+                                 window.location.href="pending_account.html";
+                            } else {
+                                $('#status').html(current_status);
+                            }
 
-                      window.location.href = "backbone.html";
-                } else {
-                      window.location.href = "login.html";
-                      $('#status').html('wrong password or email');
-              }
-          }
+                            $('#key').html(id);
+                            $('#igu').html(ig_user);
+                            $('#vcode').html(ver_code);
+                            $('#firstname').html(firstname);
+                            $('#lastname').html(lastname);
+                            $('#streetaddress').html(streetaddress);
+                            $('#city').html(city);
+                            $('#state').html(state);
+                            $('#zip').html(zip);
+                            $('#gender').html(gender);
+                            $('#active').html(active);
+                            console.log(id);
+                            console.log(ig_user);
+                            window.localStorage.setItem("status",current_status);
+                            window.localStorage.setItem("key",id);
+                            window.localStorage.setItem("igu",ig_user);
+                            window.localStorage.setItem("vcode",ver_code);
+                            window.localStorage.setItem("firstname",firstname);
+                            window.localStorage.setItem("lastname",lastname);
+                            window.localStorage.setItem("streetaddress",streetaddress);
+                            window.localStorage.setItem("city",city);
+                            window.localStorage.setItem("state",state);
+                            window.localStorage.setItem("zip",zip);
+                            window.localStorage.setItem("gender",gender);
+
+                            window.location.href = "backbone.html";
+                    }
+
+                                  else if ($.trim(active) == "0")
+                                          {
+                                          $('#status').html(booler);
+                                          window.location.href="pending_account.html";
+                                          }
+
+                                          else
+                                          {
+                                          window.location.href = "login.html";
+                                          $('#status').html('wrong password or email');
+                                          }
+                  }
       });
   }
    return false;
