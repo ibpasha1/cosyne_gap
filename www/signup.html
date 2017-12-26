@@ -67,6 +67,13 @@
                           <input id="password" type="password" class="validate" name="password"  placeholder="password" required>
                       </div>
                   </div>
+                      <div class="input-field col s6">
+                          <select id="account_type">
+                          <option value="" disabled selected>business or influncer?</option>
+                          <option value="0">influencer</option>
+                          <option value="1">business</option>
+                          </select>
+                    </div>
                   <div class="row">
                       <div class="col m12">
                           <p class="center-align">
@@ -75,6 +82,7 @@
                       </div>
                   </div>
             </div>
+
 
                  <center><a href="login.html"><font color="black">already hip?</font></a></center>
                  <center><div id="status"></div></center>
@@ -91,5 +99,11 @@
           </div>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('select').material_select();
+        $(".button-collapse").sideNav();
+        });
+    </script>
   </body>
 </html>
