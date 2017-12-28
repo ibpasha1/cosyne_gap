@@ -245,7 +245,7 @@ $("#update_account_bs").click(function(){
                           $('#key').html(data);
                           $('#status').html(data);
                         } else {
-                          
+
                         }
 
                   }
@@ -306,12 +306,6 @@ $( "#account_request" ).keyup(function() {
         }
     });
 });
-
-
-
-
-
-
 
 
     $("#logout").click(function(){
