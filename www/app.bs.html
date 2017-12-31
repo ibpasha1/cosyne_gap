@@ -5,7 +5,7 @@
     <title>Cosyne</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/bottom_tabs.css">
     <link rel="stylesheet" href="css/backbone.css">
 </head>
@@ -53,22 +53,24 @@
             <ul class="bottom_tabs noindicator tabs">
                 <li class="tab col s3"><a href="#test1" data-ripple-color="#212121"><i class="material-icons">settings_applications</i></a></li>
                 <li class="tab col s3"><a href="#test2" data-ripple-color="#212121"><i class="material-icons">view_list</i></a></li>
-                <li class="tab col s3"><a href="#test3" data-ripple-color="#212121"><i class="material-icons">center_focus_weak</i></a></li>
-                <li class="tab col s3"><a href="#test4" data-ripple-color="#212121"><i class="material-icons">local_grocery_store</i></a></li>
+                <li class="tab col s3"><a href="#test3" data-ripple-color="#212121"><i class="material-icons">work</i></a></li>
+                <li class="tab col s3"><a href="#test4" data-ripple-color="#212121"><i class="material-icons">center_focus_weak</i></a></li>
             </ul>
         </div>
         <div id="test1" class="col s12">
           <nav>
-              <div class="nav-wrapper">
-                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                  </ul>
-                 <ul class="side-nav" id="mobile-demo">
-               <li> <a href="#" class="button button-clear" id="logout">Logout</a></li>
+           <div class="nav-wrapper">
+             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+             <ul class="right hide-on-med-and-down">
              </ul>
-          </div>
-       </nav>
-
+             <ul class="side-nav" id="mobile-demo">
+               <li><a href="scan.html">Sass</a></li>
+               <li><a href="badges.html">Components</a></li>
+               <li><a href="collapsible.html">Javascript</a></li>
+               <li><a href="logout.html">logout</a></li>
+             </ul>
+           </div>
+         </nav>
           <div class="container" style="width:350px">
             <div class="row">
               <form class="col s12">
@@ -99,7 +101,7 @@
 
                   <div class="input-field col s6">
                     <input placeholder="state" id="state" type="text" class="validate">
-                    <label for="state">State</label>
+                    <label for="state">State</label>``
                   </div>
 
                   <div class="input-field col s6">
@@ -139,34 +141,127 @@
     </div>
 
        <div id="test2" class="col s12">
-        <nav>
-          <div class="nav-wrapper">
-            <center><a>create campaign</a></center>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-            </ul>
-          </div>
-        </nav>
+         <div class="navbar-fixed">
+             <nav>
+                 <div class="nav-wrapper">
+                     <center><a>create campaign</a></center>
+                       <ul id="nav-mobile" class="left hide-on-med-and-down">
+                   </ul>
              </div>
+         </nav>
+     </div>
+         <h5 class="center-align" style="margin-top: 20px;"><img src="Img/strategy.png" alt="Analog Logo" height="100" width="100"></h5>
+             <div class="divider"></div>
+
+             <div class="container" style="width:350px">
+               <div class="row">
+                 <form class="col s12">
+                   <div class="row">
+                     <div class="input-field col s12">
+                         <input id="id" name="id" type="hidden">
+                     </div>
+
+                     <div class="input-field col s6">
+                       <input  id="business_name" type="text" class="validate">
+                       <label for="business_name">business name</label>
+                     </div>
+
+                     <div class="input-field col s6">
+                       <input  id="campaign_name" type="text" class="validate">
+                       <label for="campaign_name">campaign name</label>
+                     </div>
+
+
+                         <label for="location">location</label>
+                       <p>
+                       <div class="chip">
+                       <img src="Img/cityscape.png" alt="">
+                       <?php echo $city; ?>
+                        </div>
+
+                        <div class="chip">
+                       <img src="Img/government.png" alt="">
+                       <?php echo $state; ?>
+                        </div>
+                       </p>
+
+                       <p class="range-field">
+                         <input type="range" id="test5" min="0" max="100" />
+                       </p>
+
+                       <label for="gender">gender</label>
+                         <p>
+                           <input class="with-gap" name="gender" type="radio" id="M" value="male" />
+                           <label for="M">male</label>
+                           </br>
+                           <input class="with-gap" name="gender" type="radio" id="F" value="female" />
+                           <label for="F">female</label>
+                           </br>
+                           <input class="with-gap" name="gender" type="radio" id="DM" value="na" />
+                           <label for="DM">doesn't matter</label>
+                         </p>
+
+                         <div class="input-field col s12">
+                           <input placeholder="reward title" id="reward_title" type="text" class="validate">
+                           <label for="reward_title">reward title</label>
+                         </div>
+
+                         <div class="input-field col s12">
+                           <input placeholder="reward value" id="reward_value" type="text" class="validate">
+                           <label for="reward_value">reward value</label>
+                         </div>
+
+                         <label for="qty">qty</label>
+                         <p class="range-field">
+                           <input type="range" id="test5" min="0" max="100" />
+                         </p>
+
+                         <label for="due_date">due date</label>
+                         <input type="text" class="datepicker">
+
+
+                   </div>
+                   <center><button class="button button1" id="update_account_bs">save</button></center>
+                   <center><div id="insta_var"></div></center>
+                      </div>
+                          </div>
+                            </div>
 
              <div id="test3" class="col s12">
-              <nav>
-                <div class="nav-wrapper">
-                  <center><a>create campaign</a></center>
-                  <ul id="nav-mobile" class="left hide-on-med-and-down">
-                  </ul>
-                </div>
-              </nav>
+               <nav>
+                   <div class="nav-wrapper">
+                     <center><a>campaign history</a></center>
+                     <ul id="nav-mobile" class="left hide-on-med-and-down">
+                     </ul>
                    </div>
+                 </nav>
+           </div>
 
-        <div id="test4" class="col s12">
-            <nav>
-                <div class="nav-wrapper">
-                  <center><a>current: 100 | trading post | total coin: 31243</a></center>
-                  <ul id="nav-mobile" class="left hide-on-med-and-down">
-                  </ul>
-                </div>
-              </nav>
-          </div>
+
+           <div id="test4" class="col s12">
+             <nav>
+                 <div class="nav-wrapper">
+                   <center><a>QR</a></center>
+                   <ul id="nav-mobile" class="left hide-on-med-and-down">
+                   </ul>
+                 </div>
+               </nav>
+
+               <h5 class="center-align" style="margin-top: 20px;"><img src="Img/qr-code.png" alt="Analog Logo" height="100" width="100"></h5>
+                   <div class="divider"></div>
+                 </br>
+                   <center><a href="scan.html">Scan</a></center>
+
+                   <ul class="collection with-header">
+                     <li class="collection-header"><h4>code list:</h4></li>
+                     <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                     <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                     <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                     <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                   </ul>
+
+
+         </div>
     </div>
 
 
@@ -176,22 +271,31 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script src="js/bottom_tabs.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-    <script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function() {
 
-                       $(document).ready(function() {
+                         $('.datepicker').pickadate({
+                             selectMonths: true, // Creates a dropdown to control month
+                             selectYears: 15, // Creates a dropdown of 15 years to control year,
+                             today: 'Today',
+                             clear: 'Clear',
+                             close: 'Ok',
+                             closeOnSelect: false // Close upon selecting a date,
+                           });
                            document.getElementById('id').value  = secret_key;
                            //document.getElementById('insta_username').value  = insta_username1;
                            //document.getElementById('verification_code').value  = verification_code1;
-                           document.getElementById('first_name').value  = firstname;
-                           document.getElementById('last_name').value  = lastname;
-                           document.getElementById('street_address').value  = streetaddress;
-                           document.getElementById('city').value  = city;
-                           document.getElementById('state').value  = state;
-                           document.getElementById('zip').value  = zip;
+                           document.getElementById('first_name').value        = firstname;
+                           document.getElementById('last_name').value         = lastname;
+                           document.getElementById('street_address').value    = streetaddress;
+                           document.getElementById('city').value              = city;
+                           document.getElementById('state').value             = state;
+                           document.getElementById('zip').value               = zip;
                            //document.getElementById('gender').value  = gender;
-                           document.getElementById('position').value = position;
-                           document.getElementById('business_type').value = business_type;
-                           document.getElementById('business_name').value = business_name;
+                           document.getElementById('position').value          = position;
+                           document.getElementById('business_type').value     = business_type;
+                           document.getElementById('business_name').value     = business_name;
 
 
                            //document.getElementById("insta_username").placeholder         = insta_username1;
@@ -228,8 +332,24 @@
                               }).resize();
 
 
-                            });
+                              var slider = document.getElementById('test-slider');
+                                  noUiSlider.create(slider, {
+                                   start: [20, 80],
+                                   connect: true,
+                                   step: 1,
+                                   orientation: 'horizontal', // 'horizontal' or 'vertical'
+                                   range: {
+                                     'min': 0,
+                                     'max': 100
+                                   },
+                                   format: wNumb({
+                                     decimals: 0
+                                   })
+                                  });
+
+                    });
 
                 </script>
+
         </body>
 </html>
