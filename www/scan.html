@@ -44,14 +44,13 @@
                             if(result.format == "QR_CODE")
                             {
 
-                                    var name = 'opsdfjkopsdf';
                                     var value = result.text;
                                     var data = localStorage.getItem("LocalData");
                                     console.log(data);
                                     data = JSON.parse(data);
-                                    data[data.length] = [name, value];
+                                    data[data.length] = value;
                                     localStorage.setItem("LocalData", JSON.stringify(data));
-                                    alert("Done");
+                                    alert("Cosyne");
 
                             }
                         }
