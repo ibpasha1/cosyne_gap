@@ -1,272 +1,254 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Cosyne</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link rel="stylesheet" href="css/bottom_tabs.css">
-    <link rel="stylesheet" href="css/backbone.css">
-</head>
-  <script text="text/javascript">
-     var secret_key         = window.localStorage.getItem('key');
-     var login_status       = window.localStorage.getItem('status');
-     var insta_username1    = window.localStorage.getItem('igu');
-     var verification_code1 = window.localStorage.getItem('vcode');
-     var firstname          = window.localStorage.getItem('firstname');
-     var lastname           = window.localStorage.getItem('lastname');
-     var streetaddress      = window.localStorage.getItem('streetaddress');
-     var city               = window.localStorage.getItem('city');
-     var state              = window.localStorage.getItem('state');
-     var zip                = window.localStorage.getItem('zip');
-     var gender             = window.localStorage.getItem('gender');
+   <head>
+      <meta charset="UTF-8">
+      <title>Cosyne</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="css/bottom_tabs.css">
+      <link rel="stylesheet" href="css/backbone.css">
+   </head>
+   <script text="text/javascript">
+      var secret_key         = window.localStorage.getItem('key');
+      var login_status       = window.localStorage.getItem('status');
+      var insta_username1    = window.localStorage.getItem('igu');
+      var verification_code1 = window.localStorage.getItem('vcode');
+      var firstname          = window.localStorage.getItem('firstname');
+      var lastname           = window.localStorage.getItem('lastname');
+      var streetaddress      = window.localStorage.getItem('streetaddress');
+      var city               = window.localStorage.getItem('city');
+      var state              = window.localStorage.getItem('state');
+      var zip                = window.localStorage.getItem('zip');
+      var gender             = window.localStorage.getItem('gender');
 
-     console.log(insta_username1);
-     console.log(secret_key);
-     console.log(login_status);
-     console.log(verification_code1);
-     console.log(firstname);
-     console.log(lastname);
-     console.log(streetaddress);
-     console.log(city);
-     console.log(state);
-     console.log(zip);
-     console.log(gender);
+      console.log(insta_username1);
+      console.log(secret_key);
+      console.log(login_status);
+      console.log(verification_code1);
+      console.log(firstname);
+      console.log(lastname);
+      console.log(streetaddress);
+      console.log(city);
+      console.log(state);
+      console.log(zip);
+      console.log(gender);
 
-     if (login_status == "success") {
-        //window.location.href = "back.html";
-     } else {
-        window.location.href = "login.html";
-     }
+      if (login_status == "success") {
+         //window.location.href = "back.html";
+      } else {
+         window.location.href = "login.html";
+      }
 
-     if ($.trim(login_status) != null ) {
-        window.location.href = "login.html";
-     }
+      if ($.trim(login_status) != null ) {
+         window.location.href = "login.html";
+      }
 
    </script>
-<body>
-    <div class="row">
-        <div class="col s12">
+   <body>
+      <div class="row">
+         <div class="col s12">
             <ul class="bottom_tabs noindicator tabs">
-                <li class="tab col s3"><a href="#test1" data-ripple-color="#212121"><i class="material-icons">settings_applications</i></a></li>
-                <li class="tab col s3"><a href="#test2" data-ripple-color="#212121"><i class="material-icons">view_list</i></a></li>
-                <li class="tab col s3"><a href="#test3" data-ripple-color="#212121"><i class="material-icons">center_focus_weak</i></a></li>
-                <li class="tab col s3"><a href="#test4" data-ripple-color="#212121"><i class="material-icons">local_grocery_store</i></a></li>
+               <li class="tab col s3"><a href="#test1" data-ripple-color="#212121"><i class="material-icons">settings_applications</i></a></li>
+               <li class="tab col s3"><a href="#test2" data-ripple-color="#212121"><i class="material-icons">view_list</i></a></li>
+               <li class="tab col s3"><a href="#test3" data-ripple-color="#212121"><i class="material-icons">center_focus_weak</i></a></li>
+               <li class="tab col s3"><a href="#test4" data-ripple-color="#212121"><i class="material-icons">local_grocery_store</i></a></li>
             </ul>
-        </div>
-        <div id="test1" class="col s12">
-          <nav>
-           <div class="nav-wrapper">
-             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-             <ul class="right hide-on-med-and-down">
-             </ul>
-             <ul class="side-nav" id="mobile-demo">
-               <li><a href="sass.html">Sass</a></li>
-               <li><a href="badges.html">Components</a></li>
-               <li><a href="collapsible.html">Javascript</a></li>
-               <li><a href="logout.html">logout</a></li>
-             </ul>
-           </div>
-         </nav>
-
-          <div class="container" style="width:350px">
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12">
-                      <input id="id" name="id" type="hidden">
-                  </div>
-
-                  <div class="input-field col s6">
-                    <input placeholder="" id="insta_username" type="text" class="validate">
-                    <label for="insta_username">insta username</label>
-                  </div>
-
-
-                  <div class="input-field col s6">
-                    <input placeholder="verification_code" id="verification_code" type="text" class="validate">
-                    <label for="verification_code">verification code</label>
-                  </div>
-
-
-                  <div class="input-field col s6">
-                    <input placeholder="first name" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                  </div>
-
-                  <div class="input-field col s6">
-                    <input placeholder="last name" id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                  </div>
-
-                  <div class="input-field col s12">
-                    <input placeholder="street_address" id="street_address" type="text" class="validate">
-                    <label for="street_address">Street Address</label>
-                  </div>
-
-                  <div class="input-field col s6">
-                    <input placeholder="city" id="city" type="text" class="validate">
-                    <label for="city">City</label>
-                  </div>
-
-                  <div class="input-field col s6">
-                    <input placeholder="state" id="state" type="text" class="validate">
-                    <label for="state">State</label>
-                  </div>
-
-                  <div class="input-field col s6">
-                    <input placeholder="zip" id="zip" type="text" class="validate">
-                    <label for="zip">Zip</label>
-                  </div>
-
-                  <div class="input-field col s6">
-                  <select id="gender">
-                    <option value="" disabled selected>select gender</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                  </select>
-                  <label for="gender">gender</label>
-                </div>
-
-                </div>
-                <center><button class="button button1" id="update_account_in">save</button></center>
-                <center><div id="insta_var"></div></center>
-           </div>
-      </div>
-    </div>
-
-       <div id="test2" class="col s12">
-        <nav>
-          <div class="nav-wrapper">
-            <center><a>global queue | market cap: 542 | total coin: 31243</a></center>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-            </ul>
-          </div>
-        </nav>
-
-        <div class="row">
-          <div class="input-field col s12">
-             <input placeholder="search queue" id="search" type="text" class="validate">
-          </div>
-
-            <ul class="collection">
-              <li class="collection-item avatar">
-                <img src="Img/coffee.png" alt="" class="circle">
-                <span class="title">16oz Coffee</span>
-                <p>Kalaids LLC <br>
-                  12/5/2017
-                </p>
-                <a href="" class="secondary-content"><i class="material-icons">add_circle
-                </i></a>
-              </li>
-
-        </ul>
-    </div>
-</div>
-
-
-          <div id="test3" class="col s12">
-              <nav>
-                  <div class="nav-wrapper">
-                    <center><a>my inventory | items: 2 | total coin: 4000</a></center>
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    </ul>
-                  </div>
-                </nav>
-                <ul class="collapsible" data-collapsible="accordion">
-                    <li>
-                      <div class="collapsible-header">
-                        <i class="material-icons">fullscreen</i>
-                        16 oz Coffee
-                        <span class="badge">locked</span></div>
-                      <div class="collapsible-body">
-                          <center>
-                          </br>
-                              <center><img src="product_images/coffee.png" height="50" width="50"></center>
-                          <p>Reward locked</p></center>
-                          <center><img src="product_images/qr.png" height="200" width="200"></center>
-                        </br>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header">
-                        <i class="material-icons">fullscreen</i>
-                        Cheese Slize
-                        <span class="badge">locked</span></div>
-                      <div class="collapsible-body">
-                          <center><img src="Img/qr.png" height="200" width="200"></center>
-                      </div>
-                    </li>
-                  </ul>
-             </div>
-
-
-        <div id="test4" class="col s12">
+         </div>
+         <div id="test1" class="col s12">
             <nav>
-                <div class="nav-wrapper">
+               <div class="nav-wrapper">
+                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                  </ul>
+                  <ul class="side-nav" id="mobile-demo">
+                     <li><a href="sass.html">Sass</a></li>
+                     <li><a href="badges.html">Components</a></li>
+                     <li><a href="collapsible.html">Javascript</a></li>
+                     <li><a href="logout.html">logout</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="container" style="width:350px">
+               <div class="row">
+                  <form class="col s12">
+                  <div class="row">
+                     <div class="input-field col s12">
+                        <input id="id" name="id" type="hidden">
+                     </div>
+                     <div class="input-field col s6">
+                        <input placeholder="" id="insta_username" type="text" class="validate">
+                        <label for="insta_username">insta username</label>
+                     </div>
+                     <div class="input-field col s6">
+                        <input placeholder="verification_code" id="verification_code" type="text" class="validate">
+                        <label for="verification_code">verification code</label>
+                     </div>
+                     <div class="input-field col s6">
+                        <input placeholder="first name" id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                     </div>
+                     <div class="input-field col s6">
+                        <input placeholder="last name" id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                     </div>
+                     <div class="input-field col s12">
+                        <input placeholder="street_address" id="street_address" type="text" class="validate">
+                        <label for="street_address">Street Address</label>
+                     </div>
+                     <div class="input-field col s6">
+                        <input placeholder="city" id="city" type="text" class="validate">
+                        <label for="city">City</label>
+                     </div>
+                     <div class="input-field col s6">
+                        <input placeholder="state" id="state" type="text" class="validate">
+                        <label for="state">State</label>
+                     </div>
+                     <div class="input-field col s6">
+                        <input placeholder="zip" id="zip" type="text" class="validate">
+                        <label for="zip">Zip</label>
+                     </div>
+                     <div class="input-field col s6">
+                        <select id="gender">
+                           <option value="" disabled selected>select gender</option>
+                           <option value="female">Female</option>
+                           <option value="male">Male</option>
+                        </select>
+                        <label for="gender">gender</label>
+                     </div>
+                  </div>
+                  <center><button class="button button1" id="update_account_in">save</button></center>
+                  <center>
+                     <div id="insta_var"></div>
+                  </center>
+               </div>
+            </div>
+         </div>
+         <div id="test2" class="col s12">
+            <nav>
+               <div class="nav-wrapper">
+                  <center><a>global queue | market cap: 542 | total coin: 31243</a></center>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  </ul>
+               </div>
+            </nav>
+            <div class="row">
+               <div class="input-field col s12">
+                  <input placeholder="search queue" id="search" type="text" class="validate">
+               </div>
+               <ul class="collection">
+                  <li class="collection-item avatar">
+                     <img src="Img/coffee.png" alt="" class="circle">
+                     <span class="title">16oz Coffee</span>
+                     <p>Kalaids LLC <br>
+                        12/5/2017
+                     </p>
+                     <a href="" class="secondary-content"><i class="material-icons">add_circle
+                     </i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div id="test3" class="col s12">
+            <nav>
+               <div class="nav-wrapper">
+                  <center><a>my inventory | items: 2 | total coin: 4000</a></center>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  </ul>
+               </div>
+            </nav>
+            <ul class="collapsible" data-collapsible="accordion">
+               <li>
+                  <div class="collapsible-header">
+                     <i class="material-icons">fullscreen</i>
+                     16 oz Coffee
+                     <span class="badge">locked</span>
+                  </div>
+                  <div class="collapsible-body">
+                     <center>
+                        </br>
+                        <center><img src="product_images/coffee.png" height="50" width="50"></center>
+                        <p>Reward locked</p>
+                     </center>
+                     <center><img src="product_images/qr.png" height="200" width="200"></center>
+                     </br>
+                  </div>
+               </li>
+               <li>
+                  <div class="collapsible-header">
+                     <i class="material-icons">fullscreen</i>
+                     Cheese Slize
+                     <span class="badge">locked</span>
+                  </div>
+                  <div class="collapsible-body">
+                     <center><img src="Img/qr.png" height="200" width="200"></center>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div id="test4" class="col s12">
+            <nav>
+               <div class="nav-wrapper">
                   <center><a>current: 100 | trading post | total coin: 31243</a></center>
                   <ul id="nav-mobile" class="left hide-on-med-and-down">
                   </ul>
-                </div>
-              </nav>
-          </div>
-    </div>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+      <script type="text/javascript" src="js/app.js"></script>
+      <script src="js/bottom_tabs.js"></script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type = "text/javascript" >
+      	$(document).ready(function () {
+      		document.getElementById('id').value = secret_key;
+      		document.getElementById('insta_username').value = insta_username1;
+      		document.getElementById('verification_code').value = verification_code1;
+      		document.getElementById('first_name').value = firstname;
+      		document.getElementById('last_name').value = lastname;
+      		document.getElementById('street_address').value = streetaddress;
+      		document.getElementById('city').value = city;
+      		document.getElementById('state').value = state;
+      		document.getElementById('zip').value = zip;
+      		document.getElementById('gender').value = gender;
 
 
+      		document.getElementById("insta_username").placeholder = insta_username1;
+      		document.getElementById("verification_code").placeholder = verification_code1;
+      		document.getElementById("first_name").placeholder = firstname;
+      		document.getElementById("last_name").placeholder = lastname;
+      		document.getElementById("street_address").placeholder = streetaddress;
+      		document.getElementById("city").placeholder = city;
+      		document.getElementById("state").placeholder = state;
+      		document.getElementById("zip").placeholder = zip;
+      		document.getElementById("gender").placeholder = gender;
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script src="js/bottom_tabs.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script>
+      		$('select').material_select();
+      		$(".button-collapse").sideNav();
+      		$('.timepicker').pickatime({
+      			default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+      			fromnow: 0, // set default time to * milliseconds from now (using with default = 'now')
+      			twelvehour: false, // Use AM/PM or 24-hour format
+      			donetext: 'OK', // text for done-button
+      			cleartext: 'Clear', // text for clear-button
+      			canceltext: 'Cancel', // Text for cancel-button
+      			autoclose: false, // automatic close timepicker
+      			ampmclickable: true, // make AM PM clickable
+      			aftershow: function () {} //Function for after opening timepicker
+      		});
 
-                       $(document).ready(function() {
-                           document.getElementById('id').value  = secret_key;
-                           document.getElementById('insta_username').value  = insta_username1;
-                           document.getElementById('verification_code').value  = verification_code1;
-                           document.getElementById('first_name').value  = firstname;
-                           document.getElementById('last_name').value  = lastname;
-                           document.getElementById('street_address').value  = streetaddress;
-                           document.getElementById('city').value  = city;
-                           document.getElementById('state').value  = state;
-                           document.getElementById('zip').value  = zip;
-                           document.getElementById('gender').value  = gender;
-
-
-                           document.getElementById("insta_username").placeholder         = insta_username1;
-                           document.getElementById("verification_code").placeholder      = verification_code1;
-                           document.getElementById("first_name").placeholder             = firstname;
-                           document.getElementById("last_name").placeholder              = lastname;
-                           document.getElementById("street_address").placeholder         = streetaddress;
-                           document.getElementById("city").placeholder                   = city;
-                           document.getElementById("state").placeholder                  = state;
-                           document.getElementById("zip").placeholder                    = zip;
-                           document.getElementById("gender").placeholder                 = gender;
-
-                           $('select').material_select();
-                           $(".button-collapse").sideNav();
-                           $('.timepicker').pickatime({
-                             default: 'now', // Set default time: 'now', '1:30AM', '16:30'
-                             fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
-                             twelvehour: false, // Use AM/PM or 24-hour format
-                             donetext: 'OK', // text for done-button
-                             cleartext: 'Clear', // text for clear-button
-                             canceltext: 'Cancel', // Text for cancel-button
-                             autoclose: false, // automatic close timepicker
-                             ampmclickable: true, // make AM PM clickable
-                             aftershow: function(){} //Function for after opening timepicker
-                           });
-
-                              $(window).on("load resize ", function() {
-                              var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-                              $('.tbl-header').css({'padding-right':scrollWidth});
-                              }).resize();
+      		$(window).on("load resize ", function () {
+      			var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+      			$('.tbl-header').css({
+      				'padding-right': scrollWidth
+      			});
+      		}).resize();
 
 
-                            });
+      	});
 
-                </script>
-        </body>
+      </script>
+   </body>
 </html>
